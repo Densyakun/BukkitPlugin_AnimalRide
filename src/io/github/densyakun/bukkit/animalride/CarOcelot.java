@@ -21,7 +21,7 @@ public class CarOcelot implements Runnable {
 	public void run() {
 		while (true) {
 			if ((car != null) && !car.isDead() && !car.isEmpty() && car.isValid() && (car.getPassenger() != null) && (car.getPassenger() instanceof Player)) {
-				if ((((Player) car.getPassenger()).getItemInHand() != null) && (((Player) car.getPassenger()).getItemInHand().getType() == Material.RAW_FISH)) {
+				if ((((Player) car.getPassenger()).getInventory().getItemInMainHand() != null) && (((Player) car.getPassenger()).getInventory().getItemInMainHand().getType() == Material.RAW_FISH)) {
 					if (a <= 0) {
 						for (int b = 0; b < ((Player) car.getPassenger()).getInventory().getSize(); b++) {
 							ItemStack c = ((Player) car.getPassenger()).getInventory().getItem(b);
@@ -37,7 +37,7 @@ public class CarOcelot implements Runnable {
 						}
 					}
 					if (0 < a) {
-						switch (((Player) car.getPassenger()).getItemInHand().getType()) {
+						switch (((Player) car.getPassenger()).getInventory().getItemInMainHand().getType()) {
 						case RAW_FISH:
 							if (car.isOnGround()) {
 								car.setVelocity(car.getVelocity().midpoint(new Vector(car.getPassenger().getLocation().getDirection().getX() * AnimalRide.a(car.getLocation()), car.getPassenger().getLocation().getDirection().getY() * 2 * AnimalRide.a(car.getLocation()), car.getPassenger().getLocation().getDirection().getZ() * AnimalRide.a(car.getLocation()))));

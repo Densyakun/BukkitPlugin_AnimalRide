@@ -36,9 +36,7 @@ public class AnimalRide extends JavaPlugin implements Listener {
 	public void PlayerInteractEntity(PlayerInteractEntityEvent e) {
 		Player p = e.getPlayer();
 		
-		//TODO 1.9
-		//ItemStack item = p.getInventory().getItemInMainHand();
-		ItemStack item = p.getInventory().getItemInHand();
+		ItemStack item = p.getInventory().getItemInMainHand();
 		if (item == null || (item != null && item.getType() == Material.AIR)) {
 			if ((e.getRightClicked() instanceof CraftChicken) && ((CraftChicken) e.getRightClicked()).isAdult()) {
 				e.getRightClicked().setPassenger(e.getPlayer());

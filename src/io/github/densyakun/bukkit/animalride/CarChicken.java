@@ -21,7 +21,7 @@ public class CarChicken implements Runnable {
 	public void run() {
 		while (true) {
 			if ((car != null) && !car.isDead() && !car.isEmpty() && car.isValid() && (car.getPassenger() != null) && (car.getPassenger() instanceof Player)) {
-				if ((((Player) car.getPassenger()).getItemInHand() != null) && ((((Player) car.getPassenger()).getItemInHand().getType() == Material.SEEDS) || (((Player) car.getPassenger()).getItemInHand().getType() == Material.EGG))) {
+				if ((((Player) car.getPassenger()).getInventory().getItemInMainHand() != null) && ((((Player) car.getPassenger()).getInventory().getItemInMainHand().getType() == Material.SEEDS) || (((Player) car.getPassenger()).getInventory().getItemInMainHand().getType() == Material.EGG))) {
 					if (a <= 0) {
 						for (int b = 0; b < ((Player) car.getPassenger()).getInventory().getSize(); b++) {
 							ItemStack c = ((Player) car.getPassenger()).getInventory().getItem(b);
@@ -37,7 +37,7 @@ public class CarChicken implements Runnable {
 						}
 					}
 					if (0 < a) {
-						switch (((Player) car.getPassenger()).getItemInHand().getType()) {
+						switch (((Player) car.getPassenger()).getInventory().getItemInMainHand().getType()) {
 						case SEEDS:
 							car.setVelocity(car.getVelocity().midpoint(new Vector(car.getPassenger().getLocation().getDirection().getX() / 4 * AnimalRide.a(car.getLocation()), car.getPassenger().getLocation().getDirection().getY() / 4 * AnimalRide.a(car.getLocation()), car.getPassenger().getLocation().getDirection().getZ() / 4 * AnimalRide.a(car.getLocation()))));
 							a--;
