@@ -1,0 +1,5 @@
+name: AnimalRide
+main: io.github.densyakun.bukkit.animalride.AnimalRide
+version: 0.1b
+author: Densyakun
+website: https://github.com/Densyakun/BukkitPlugin_AnimalRide
