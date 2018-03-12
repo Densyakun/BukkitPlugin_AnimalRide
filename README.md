@@ -1,5 +1,5 @@
 # BukkitPlugin_AnimalRide
-全ての動物が乗り物になるBukkitプラグインです。鶏・羊・山猫が運転できます。
+動物が乗り物になるBukkitプラグインです。鶏・羊・山猫が運転できます。
 
 - [Download](https://github.com/Densyakun/BukkitPlugin_AnimalRide/releases)
 
